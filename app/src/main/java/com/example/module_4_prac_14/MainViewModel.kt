@@ -8,15 +8,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val compassSensorManager = CompassSensorManager(application)
 
-    /**
-     * StateFlow с текущим азимутом.
-     * Сохраняет значение при повороте экрана.
-     */
     val azimuth: StateFlow<Float> = compassSensorManager.azimuth
 
-    /**
-     * StateFlow с информацией о доступности датчика.
-     */
     val sensorAvailable: StateFlow<Boolean> = compassSensorManager.sensorAvailable
 
     fun startSensor() {
